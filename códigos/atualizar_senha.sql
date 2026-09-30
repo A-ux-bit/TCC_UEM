@@ -1,0 +1,2 @@
+USE kanban_startup;
+CREATE TABLE IF NOT EXISTS redefinicoes_senha(id INT AUTO_INCREMENT PRIMARY KEY,id_usuario INT NOT NULL,token_hash CHAR(64) NOT NULL,expira_em DATETIME NOT NULL,usado TINYINT(1) NOT NULL DEFAULT 0,criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,INDEX(token_hash),FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE);
